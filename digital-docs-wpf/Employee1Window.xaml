@@ -1,0 +1,37 @@
+<Window x:Class="digital_docs_wpf.Employee1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:digital_docs_wpf"
+        mc:Ignorable="d"
+        Title="Employee1_xaml" Height="500" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Content="Offer list" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+        <Button Grid.Row="1" Grid.Column="0" Content="Fetch offers" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Width="100"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="Show offer" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Width="100"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="Accept" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Width="100" Click="ButtonBase_OnClick"/>
+        <Button Grid.Row="4" Grid.Column="0" Content="Reject" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Width="100"/>
+        <ListView Grid.Row="1" Grid.Column="1" Grid.RowSpan="5">
+            <ListViewItem Content="Sample offer 1"></ListViewItem>  
+            <ListViewItem Content="Sample offer 2"></ListViewItem>  
+            <ListViewItem Content="Sample offer 3"></ListViewItem>  
+            <ListViewItem Content="Sample offer 4"></ListViewItem>  
+            <ListViewItem Content="Sample offer 5"></ListViewItem>  
+            <ListViewItem Content="Sample offer 6"></ListViewItem>  
+        </ListView>
+    </Grid>
+</Window>
