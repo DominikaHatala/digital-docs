@@ -9,8 +9,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
@@ -20,9 +20,8 @@
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="1" Content="Order management system" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
-        <Button Grid.Row="1" Grid.Column="1" Content="Employee 1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="ButtonBase_OnClick"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="Employee 2" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"/>
-        <Button Grid.Row="3" Grid.Column="1" Content="Employee 3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"/>
-        <Button Grid.Row="4" Grid.Column="1" Content="Employee 4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="Login" Padding="10" Margin="10"/>
+        <PasswordBox Grid.Row="2" Grid.Column="1" Padding="10" Margin="10" />
+        <Button Grid.Row="4" Grid.Column="1" Content="Sign in" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="ButtonBase_OnClick"/>
     </Grid>
 </Window>

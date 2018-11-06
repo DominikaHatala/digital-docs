@@ -14,7 +14,7 @@ namespace digital_docs_wpf
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs routedEventArgs)
         {
-            var newForm = new Employee1Window();
+            var newForm = new MailWindow();
             newForm.Show();
             Close();
         }
