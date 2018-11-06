@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\
+C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Release\
 digital_docs_wpf
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\App.xaml
 3-247267280
 
@@ -16,5 +16,5 @@ C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\App.xaml
 91244218623
 AssignEmployeeWindow.xaml;MailWindow.xaml;MainWindow.xaml;
 
-False
+True
 
