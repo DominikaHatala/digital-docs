@@ -5,16 +5,16 @@ namespace digital_docs_wpf
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class LoginView
     {
-        public MainWindow()
+        public LoginView()
         {
             InitializeComponent();
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs routedEventArgs)
         {
-            var newForm = new MailWindow();
+            var newForm = new User1_NewTasks();
             newForm.Show();
             Close();
         }

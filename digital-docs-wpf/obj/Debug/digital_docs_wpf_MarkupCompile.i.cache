@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\donia\Documents\digital-docs\digital-docs-wpf\obj\Debug\
+C:\Users\maciej.kankowski\Documents\digital-docs\digital-docs-wpf\obj\Debug\
 digital_docs_wpf
 none
 false
 DEBUG;TRACE
-C:\Users\donia\Documents\digital-docs\digital-docs-wpf\App.xaml
-3-247267280
+C:\Users\maciej.kankowski\Documents\digital-docs\digital-docs-wpf\App.xaml
+33203466
 1-1659823659
-11-363206273
-10-1793414948
-AssignEmployeeWindow.xaml;MailWindow.xaml;MainWindow.xaml;
+11-1934345495
+10-1813417571
+AssignEmployeeWindow.xaml;User1\User1_NewTasks.xaml;LoginView.xaml;
 
-False
+True
 

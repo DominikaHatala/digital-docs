@@ -56,8 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="AssignEmployeeWindow.xaml" />
-    <Page Include="MailWindow.xaml" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="User1\User1_NewTasks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -69,11 +71,11 @@
       <DependentUpon>AssignEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mail.cs" />
-    <Compile Include="MailWindow.xaml.cs">
-      <DependentUpon>MailWindow.xaml</DependentUpon>
+    <Compile Include="User1\User1_NewTasks.xaml.cs">
+      <DependentUpon>User1_NewTasks.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
