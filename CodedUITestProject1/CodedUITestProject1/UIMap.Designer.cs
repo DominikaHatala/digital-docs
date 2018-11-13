@@ -167,6 +167,139 @@ namespace CodedUITestProject1
             Mouse.Click(uICloseButton, new Point(28, 21));
         }
         
+        /// <summary>
+        /// RecordedMethod4 - Use 'RecordedMethod4Params' to pass parameters into this method.
+        /// </summary>
+        public void RecordedMethod4()
+        {
+            #region Variable Declarations
+            WinEdit uINameEdit = this.UIDebugWindow.UIItemWindow.UIDigital_docs_wpfListItem.UINameEdit;
+            WpfEdit uIItemEdit = this.UIMainWindowWindow.UIItemEdit;
+            WinListItem uISourcetreeListItem = this.UIItemWindow.UIFolderViewWindow.UISourcetreeListItem;
+            WpfEdit uIItemEdit1 = this.UIMainWindowWindow.UIItemEdit1;
+            WpfButton uISigninButton = this.UIMainWindowWindow.UISigninButton;
+            WpfButton uIFetchoffersButton = this.UIEmployee1_xamlWindow.UIFetchoffersButton;
+            WpfCell uINewsdfsdfsfsfdWolnyoCell = this.UIEmployee1_xamlWindow.UIListViewTable.UIItemDataItem.UINewsdfsdfsfsfdWolnyoCell;
+            WpfCell uINowawiadWolnyodwirusCell = this.UIEmployee1_xamlWindow.UIListViewTable.UIItemDataItem1.UINowawiadWolnyodwirusCell;
+            WpfCell uIHelloworldTawiadomośCell = this.UIEmployee1_xamlWindow.UIListViewTable.UIItemDataItem2.UIHelloworldTawiadomośCell;
+            WpfButton uIAcceptButton = this.UIEmployee1_xamlWindow.UIAcceptButton;
+            WpfList uIItemList = this.UIAssignEmployeeWindowWindow.UIItemList;
+            WpfButton uIAcceptButton1 = this.UIAssignEmployeeWindowWindow.UIAcceptButton;
+            WinButton uICloseButton = this.UIAssignEmployeeWindowWindow1.UICloseButton;
+            #endregion
+
+            // Double-Click 'Name' text box
+            Mouse.DoubleClick(uINameEdit, new Point(52, 4));
+
+            // Double-Click text box
+            Mouse.DoubleClick(uIItemEdit, new Point(127, 19));
+
+            // Click 'Sourcetree' list item
+            Mouse.Click(uISourcetreeListItem, new Point(40, 82));
+
+            // Type 'User1' in text box
+            uIItemEdit.Text = this.RecordedMethod4Params.UIItemEditText;
+
+            // Type '{Tab}' in text box
+            Keyboard.SendKeys(uIItemEdit, this.RecordedMethod4Params.UIItemEditSendKeys, ModifierKeys.None);
+
+            // Type '********' in text box numbered 2 in 'MainWindow' window
+            Keyboard.SendKeys(uIItemEdit1, this.RecordedMethod4Params.UIItemEdit1SendKeys, true);
+
+            // Click 'Sign in' button
+            Mouse.Click(uISigninButton, new Point(53, 29));
+
+            // Click 'Fetch offers' button
+            Mouse.Click(uIFetchoffersButton, new Point(51, 13));
+
+            // Click 'new sdfsdfsfsfd Wolny od wirusów. www.avast.com' cell
+            Mouse.Click(uINewsdfsdfsfsfdWolnyoCell, new Point(89, 37));
+
+            // Click 'nowa wiad Wolny od wirusów. www.avast.com' cell
+            Mouse.Click(uINowawiadWolnyodwirusCell, new Point(110, 29));
+
+            // Click 'hello world --- Ta wiadomość została sprawdzona na...' cell
+            Mouse.Click(uIHelloworldTawiadomośCell, new Point(127, 29));
+
+            // Click 'Accept' button
+            Mouse.Click(uIAcceptButton, new Point(75, 20));
+
+            // Select 'Employee 4' in list box
+            uIItemList.SelectedItemsAsString = this.RecordedMethod4Params.UIItemListSelectedItemsAsString;
+
+            // Click 'Accept' button
+            Mouse.Click(uIAcceptButton1, new Point(81, 39));
+
+            // Click 'Close' button
+            Mouse.Click(uICloseButton, new Point(40, 26));
+        }
+        
+        /// <summary>
+        /// RecordedMethod5 - Use 'RecordedMethod5Params' to pass parameters into this method.
+        /// </summary>
+        public void RecordedMethod5()
+        {
+            #region Variable Declarations
+            WinEdit uINameEdit = this.UIDebugWindow.UIItemWindow.UIDigital_docs_wpfListItem.UINameEdit;
+            WpfEdit uIItemEdit = this.UIMainWindowWindow.UIItemEdit;
+            WpfEdit uIItemEdit1 = this.UIMainWindowWindow.UIItemEdit1;
+            WpfButton uISigninButton = this.UIMainWindowWindow.UISigninButton;
+            WpfButton uIFetchoffersButton = this.UIEmployee1_xamlWindow.UIFetchoffersButton;
+            WpfCell uINewsdfsdfsfsfdWolnyoCell = this.UIEmployee1_xamlWindow.UIListViewTable.UIItemDataItem.UINewsdfsdfsfsfdWolnyoCell;
+            WpfCell uINowawiadWolnyodwirusCell = this.UIEmployee1_xamlWindow.UIListViewTable.UIItemDataItem1.UINowawiadWolnyodwirusCell;
+            WpfCell uIHelloworldTawiadomośCell = this.UIEmployee1_xamlWindow.UIListViewTable.UIItemDataItem2.UIHelloworldTawiadomośCell;
+            WpfButton uIAcceptButton = this.UIEmployee1_xamlWindow.UIAcceptButton;
+            WpfList uIItemList = this.UIAssignEmployeeWindowWindow.UIItemList;
+            WpfButton uIAcceptButton1 = this.UIAssignEmployeeWindowWindow.UIAcceptButton;
+            WinButton uICloseButton = this.UIAssignEmployeeWindowWindow1.UICloseButton;
+            #endregion
+
+            // Click 'Name' text box
+            Mouse.Click(uINameEdit, new Point(83, 3));
+
+            // Double-Click 'Name' text box
+            Mouse.DoubleClick(uINameEdit, new Point(85, 11));
+
+            // Type 'User1' in text box
+            uIItemEdit.Text = this.RecordedMethod5Params.UIItemEditText;
+
+            // Type '{Tab}' in text box
+            Keyboard.SendKeys(uIItemEdit, this.RecordedMethod5Params.UIItemEditSendKeys, ModifierKeys.None);
+
+            // Type '********' in text box numbered 2 in 'MainWindow' window
+            Keyboard.SendKeys(uIItemEdit1, this.RecordedMethod5Params.UIItemEdit1SendKeys, true);
+
+            // Click 'Sign in' button
+            Mouse.Click(uISigninButton, new Point(51, 24));
+
+            // Click 'Fetch offers' button
+            Mouse.Click(uIFetchoffersButton, new Point(69, 30));
+
+            // Click 'new sdfsdfsfsfd Wolny od wirusów. www.avast.com' cell
+            Mouse.Click(uINewsdfsdfsfsfdWolnyoCell, new Point(138, 18));
+
+            // Click 'nowa wiad Wolny od wirusów. www.avast.com' cell
+            Mouse.Click(uINowawiadWolnyodwirusCell, new Point(143, 40));
+
+            // Click 'hello world --- Ta wiadomość została sprawdzona na...' cell
+            Mouse.Click(uIHelloworldTawiadomośCell, new Point(141, 19));
+
+            // Click 'new sdfsdfsfsfd Wolny od wirusów. www.avast.com' cell
+            Mouse.Click(uINewsdfsdfsfsfdWolnyoCell, new Point(136, 50));
+
+            // Click 'Accept' button
+            Mouse.Click(uIAcceptButton, new Point(72, 39));
+
+            // Select 'Employee 2' in list box
+            uIItemList.SelectedItemsAsString = this.RecordedMethod5Params.UIItemListSelectedItemsAsString;
+
+            // Click 'Accept' button
+            Mouse.Click(uIAcceptButton1, new Point(85, 31));
+
+            // Click 'Close' button
+            Mouse.Click(uICloseButton, new Point(28, 16));
+        }
+        
         #region Properties
         public virtual RecordedMethod2Params RecordedMethod2Params
         {
@@ -189,6 +322,30 @@ namespace CodedUITestProject1
                     this.mRecordedMethod3Params = new RecordedMethod3Params();
                 }
                 return this.mRecordedMethod3Params;
+            }
+        }
+        
+        public virtual RecordedMethod4Params RecordedMethod4Params
+        {
+            get
+            {
+                if ((this.mRecordedMethod4Params == null))
+                {
+                    this.mRecordedMethod4Params = new RecordedMethod4Params();
+                }
+                return this.mRecordedMethod4Params;
+            }
+        }
+        
+        public virtual RecordedMethod5Params RecordedMethod5Params
+        {
+            get
+            {
+                if ((this.mRecordedMethod5Params == null))
+                {
+                    this.mRecordedMethod5Params = new RecordedMethod5Params();
+                }
+                return this.mRecordedMethod5Params;
             }
         }
         
@@ -251,12 +408,28 @@ namespace CodedUITestProject1
                 return this.mUIAssignEmployeeWindowWindow1;
             }
         }
+        
+        public UIItemWindow3 UIItemWindow
+        {
+            get
+            {
+                if ((this.mUIItemWindow == null))
+                {
+                    this.mUIItemWindow = new UIItemWindow3();
+                }
+                return this.mUIItemWindow;
+            }
+        }
         #endregion
         
         #region Fields
         private RecordedMethod2Params mRecordedMethod2Params;
         
         private RecordedMethod3Params mRecordedMethod3Params;
+        
+        private RecordedMethod4Params mRecordedMethod4Params;
+        
+        private RecordedMethod5Params mRecordedMethod5Params;
         
         private UIDebugWindow mUIDebugWindow;
         
@@ -267,6 +440,8 @@ namespace CodedUITestProject1
         private UIAssignEmployeeWindowWindow mUIAssignEmployeeWindowWindow;
         
         private UIAssignEmployeeWindowWindow1 mUIAssignEmployeeWindowWindow1;
+        
+        private UIItemWindow3 mUIItemWindow;
         #endregion
     }
     
@@ -337,6 +512,66 @@ namespace CodedUITestProject1
         /// Select 'Employee 4' in list box
         /// </summary>
         public string UIItemListSelectedItemsAsString = "Employee 4";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'RecordedMethod4'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "15.0.26208.0")]
+    public class RecordedMethod4Params
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type 'User1' in text box
+        /// </summary>
+        public string UIItemEditText = "User1";
+        
+        /// <summary>
+        /// Type '{Tab}' in text box
+        /// </summary>
+        public string UIItemEditSendKeys = "{Tab}";
+        
+        /// <summary>
+        /// Type '********' in text box numbered 2 in 'MainWindow' window
+        /// </summary>
+        public string UIItemEdit1SendKeys = "T2cR1h5GaUMN8FI2K66q5bOKPlzCQyFz";
+        
+        /// <summary>
+        /// Select 'Employee 4' in list box
+        /// </summary>
+        public string UIItemListSelectedItemsAsString = "Employee 4";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'RecordedMethod5'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "15.0.26208.0")]
+    public class RecordedMethod5Params
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type 'User1' in text box
+        /// </summary>
+        public string UIItemEditText = "User1";
+        
+        /// <summary>
+        /// Type '{Tab}' in text box
+        /// </summary>
+        public string UIItemEditSendKeys = "{Tab}";
+        
+        /// <summary>
+        /// Type '********' in text box numbered 2 in 'MainWindow' window
+        /// </summary>
+        public string UIItemEdit1SendKeys = "T2cR1h5GaUMN8FI2K66q5bOKPlzCQyFz";
+        
+        /// <summary>
+        /// Select 'Employee 2' in list box
+        /// </summary>
+        public string UIItemListSelectedItemsAsString = "Employee 2";
         #endregion
     }
     
@@ -877,6 +1112,34 @@ namespace CodedUITestProject1
                 return this.mUIShowofferButton;
             }
         }
+        
+        public WpfButton UIFetchoffersButton
+        {
+            get
+            {
+                if ((this.mUIFetchoffersButton == null))
+                {
+                    this.mUIFetchoffersButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIFetchoffersButton.SearchProperties[WpfButton.PropertyNames.Name] = "Fetch offers";
+                    this.mUIFetchoffersButton.WindowTitles.Add("Employee1_xaml");
+                    #endregion
+                }
+                return this.mUIFetchoffersButton;
+            }
+        }
+        
+        public UIListViewTable UIListViewTable
+        {
+            get
+            {
+                if ((this.mUIListViewTable == null))
+                {
+                    this.mUIListViewTable = new UIListViewTable(this);
+                }
+                return this.mUIListViewTable;
+            }
+        }
         #endregion
         
         #region Fields
@@ -885,6 +1148,180 @@ namespace CodedUITestProject1
         private WpfList mUIOffersListViewList;
         
         private WpfButton mUIShowofferButton;
+        
+        private WpfButton mUIFetchoffersButton;
+        
+        private UIListViewTable mUIListViewTable;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "15.0.26208.0")]
+    public class UIListViewTable : WpfTable
+    {
+        
+        public UIListViewTable(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfTable.PropertyNames.AutomationId] = "listView";
+            this.WindowTitles.Add("Employee1_xaml");
+            #endregion
+        }
+        
+        #region Properties
+        public UIItemDataItem UIItemDataItem
+        {
+            get
+            {
+                if ((this.mUIItemDataItem == null))
+                {
+                    this.mUIItemDataItem = new UIItemDataItem(this);
+                }
+                return this.mUIItemDataItem;
+            }
+        }
+        
+        public UIItemDataItem1 UIItemDataItem1
+        {
+            get
+            {
+                if ((this.mUIItemDataItem1 == null))
+                {
+                    this.mUIItemDataItem1 = new UIItemDataItem1(this);
+                }
+                return this.mUIItemDataItem1;
+            }
+        }
+        
+        public UIItemDataItem2 UIItemDataItem2
+        {
+            get
+            {
+                if ((this.mUIItemDataItem2 == null))
+                {
+                    this.mUIItemDataItem2 = new UIItemDataItem2(this);
+                }
+                return this.mUIItemDataItem2;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIItemDataItem mUIItemDataItem;
+        
+        private UIItemDataItem1 mUIItemDataItem1;
+        
+        private UIItemDataItem2 mUIItemDataItem2;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "15.0.26208.0")]
+    public class UIItemDataItem : WpfControl
+    {
+        
+        public UIItemDataItem(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfControl.PropertyNames.ControlType] = "DataItem";
+            this.WindowTitles.Add("Employee1_xaml");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfCell UINewsdfsdfsfsfdWolnyoCell
+        {
+            get
+            {
+                if ((this.mUINewsdfsdfsfsfdWolnyoCell == null))
+                {
+                    this.mUINewsdfsdfsfsfdWolnyoCell = new WpfCell(this);
+                    #region Search Criteria
+                    this.mUINewsdfsdfsfsfdWolnyoCell.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = "Content";
+                    this.mUINewsdfsdfsfsfdWolnyoCell.WindowTitles.Add("Employee1_xaml");
+                    #endregion
+                }
+                return this.mUINewsdfsdfsfsfdWolnyoCell;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfCell mUINewsdfsdfsfsfdWolnyoCell;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "15.0.26208.0")]
+    public class UIItemDataItem1 : WpfControl
+    {
+        
+        public UIItemDataItem1(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfControl.PropertyNames.ControlType] = "DataItem";
+            this.SearchProperties[WpfControl.PropertyNames.Instance] = "2";
+            this.WindowTitles.Add("Employee1_xaml");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfCell UINowawiadWolnyodwirusCell
+        {
+            get
+            {
+                if ((this.mUINowawiadWolnyodwirusCell == null))
+                {
+                    this.mUINowawiadWolnyodwirusCell = new WpfCell(this);
+                    #region Search Criteria
+                    this.mUINowawiadWolnyodwirusCell.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = "Content";
+                    this.mUINowawiadWolnyodwirusCell.WindowTitles.Add("Employee1_xaml");
+                    #endregion
+                }
+                return this.mUINowawiadWolnyodwirusCell;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfCell mUINowawiadWolnyodwirusCell;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "15.0.26208.0")]
+    public class UIItemDataItem2 : WpfControl
+    {
+        
+        public UIItemDataItem2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfControl.PropertyNames.ControlType] = "DataItem";
+            this.SearchProperties[WpfControl.PropertyNames.Instance] = "3";
+            this.WindowTitles.Add("Employee1_xaml");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfCell UIHelloworldTawiadomośCell
+        {
+            get
+            {
+                if ((this.mUIHelloworldTawiadomośCell == null))
+                {
+                    this.mUIHelloworldTawiadomośCell = new WpfCell(this);
+                    #region Search Criteria
+                    this.mUIHelloworldTawiadomośCell.SearchProperties[WpfCell.PropertyNames.ColumnHeader] = "Content";
+                    this.mUIHelloworldTawiadomośCell.WindowTitles.Add("Employee1_xaml");
+                    #endregion
+                }
+                return this.mUIHelloworldTawiadomośCell;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfCell mUIHelloworldTawiadomośCell;
         #endregion
     }
     
@@ -974,6 +1411,71 @@ namespace CodedUITestProject1
         
         #region Fields
         private WinButton mUICloseButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "15.0.26208.0")]
+    public class UIItemWindow3 : WinWindow
+    {
+        
+        public UIItemWindow3()
+        {
+            #region Search Criteria
+            this.SearchProperties[WinWindow.PropertyNames.AccessibleName] = "Desktop 1";
+            this.SearchProperties[WinWindow.PropertyNames.ClassName] = "#32769";
+            #endregion
+        }
+        
+        #region Properties
+        public UIFolderViewWindow UIFolderViewWindow
+        {
+            get
+            {
+                if ((this.mUIFolderViewWindow == null))
+                {
+                    this.mUIFolderViewWindow = new UIFolderViewWindow(this);
+                }
+                return this.mUIFolderViewWindow;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private UIFolderViewWindow mUIFolderViewWindow;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "15.0.26208.0")]
+    public class UIFolderViewWindow : WinWindow
+    {
+        
+        public UIFolderViewWindow(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WinWindow.PropertyNames.ControlId] = "1";
+            #endregion
+        }
+        
+        #region Properties
+        public WinListItem UISourcetreeListItem
+        {
+            get
+            {
+                if ((this.mUISourcetreeListItem == null))
+                {
+                    this.mUISourcetreeListItem = new WinListItem(this);
+                    #region Search Criteria
+                    this.mUISourcetreeListItem.SearchProperties[WinListItem.PropertyNames.Name] = "Sourcetree";
+                    #endregion
+                }
+                return this.mUISourcetreeListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinListItem mUISourcetreeListItem;
         #endregion
     }
 }

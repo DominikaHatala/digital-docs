@@ -99,3 +99,6 @@ C:\Users\donia\Documents\digital-docs\digital-docs-wpf\obj\Debug\digital-docs-wp
 C:\Users\donia\Documents\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf.exe
 C:\Users\donia\Documents\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf.pdb
 >>>>>>> master
+C:\Users\PC10\Documents\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf_Content.g.cs
+C:\Users\PC10\Documents\digital-docs\digital-docs-wpf\bin\Debug\DigitalDocsDatabase.sql
+C:\Users\PC10\Documents\digital-docs\digital-docs-wpf\obj\Debug\digital-docs-wpf.csproj.CopyComplete
