@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<orders>
+	<order>
+		<orderNumber>12366665</orderNumber>
+		<status>InRealisation</status>
+		<client>
+			<id>15</id>
+			<name>Jan</name>
+			<surname>Kowalski</surname>
+		</client>
+		<product>
+			<type>666</type>
+			<detail>Glitter</detail>
+			<amount>15</amount>
+			<status>Available</status>
+		</product>
+		<product>
+			<type>777</type>
+			<detail>Gems</detail>
+			<amount>8</amount>
+			<status>Available</status>
+		</product>
+		<product>
+			<type>888</type>
+			<detail>Stripes</detail>
+			<amount>4</amount>
+			<status>Available</status>
+		</product>
+	</order>  
+</orders>

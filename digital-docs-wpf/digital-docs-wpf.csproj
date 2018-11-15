@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="XmlTransformer.cs" />
     <Page Include="AssignEmployeeWindow.xaml" />
     <Page Include="User1\User1_NewTasks.xaml">
       <SubType>Designer</SubType>

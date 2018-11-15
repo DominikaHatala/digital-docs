@@ -1,0 +1,35 @@
+<orders>
+  <order>
+    <orderNumber>12345</orderNumber>
+    <status>InRealisation</status>
+    <client>
+      <id>15</id>
+      <name>Jan</name>
+      <surname>Kowalski</surname>
+    </client>
+    <product>
+      <type>1</type>
+      <detail>Glitter</detail>
+      <amount>15</amount>
+      <status>Available</status>
+    </product>
+    <product>
+      <type>3</type>
+      <detail>OakWood</detail>
+      <amount>6</amount>
+      <status>Ordered</status>
+    </product>
+    <product>
+      <type>3</type>
+      <detail>OakWood2</detail>
+      <amount>6</amount>
+      <status>Ordered</status>
+    </product>
+    <product>
+      <type>3</type>
+      <detail>OakWood3</detail>
+      <amount>6</amount>
+      <status>Ordered</status>
+    </product>
+  </order>
+</orders>
