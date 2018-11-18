@@ -3,12 +3,10 @@ using System.Net;
 using System.Net.Mail;
 using System.Collections.Generic;
 using System.Windows;
-<<<<<<< Updated upstream
 using Microsoft.Win32;
-=======
 using System.Xml;
 using System.Text;
->>>>>>> Stashed changes
+
 
 namespace digital_docs_wpf
 {
