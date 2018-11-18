@@ -20,8 +20,8 @@
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="1" Content="Order management system" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="Login" Padding="10" Margin="10"/>
-        <PasswordBox Grid.Row="2" Grid.Column="1" Padding="10" Margin="10" />
+        <TextBox Name="LoginBox" Grid.Row="1" Grid.Column="1" Text="Login" Padding="10" Margin="10" TextChanged="LoginBox_TextChanged"/>
+        <PasswordBox Name="PasswordBox" Grid.Row="2" Grid.Column="1" Padding="10" Margin="10" PasswordChanged="PasswordBox_PasswordChanged" />
         <Button Grid.Row="4" Grid.Column="1" Content="Sign in" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="ButtonBase_OnClick"/>
     </Grid>
 </Window>

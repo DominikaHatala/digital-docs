@@ -47,7 +47,7 @@ namespace digital_docs_wpf
 
             // @todo: decide what have to be send...
 
-            //mailDetails.Headers.Add("X-SampleHeader", "Just works!");
+            mailDetails.Headers.Add("X-SampleHeader", "Just works!");
 
             // @todo: attach file
 
@@ -61,7 +61,5 @@ namespace digital_docs_wpf
 
         }
 
-    }
-
-    
+    }  
 }
