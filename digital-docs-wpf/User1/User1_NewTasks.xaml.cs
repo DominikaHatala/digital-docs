@@ -24,7 +24,7 @@ namespace digital_docs_wpf
                 if (checkedEmployees[i])
                 {
                     Mail mail = new Mail();
-                    mail.send(i+2, fileName);
+                    mail.send(i+2, fileName, checkedEmployees.Length);
                 }
             }
         }
