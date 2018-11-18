@@ -29,7 +29,7 @@
         <Button Grid.Row="4" Grid.Column="3" Content="Attachment" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" Width="101" Click="Attachment_OnClick" Margin="21.6,25,27.8,0" Height="41"/>
 
 
-        <ListView Grid.Row="1" Grid.RowSpan="3" x:Name="listView" Margin="10,0,25,0" SelectionChanged="listView_SelectionChanged">
+        <ListView Grid.Row="1" Grid.RowSpan="3" Name="listView" Margin="10,0,25,0" SelectionChanged="listView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}"/>
