@@ -24,6 +24,9 @@ namespace digital_docs_wpf
 
         private void Accept_OnClick(object sender, RoutedEventArgs e)
         {
+            var excelDialog = new ExcelDialog();
+            excelDialog.Show();
+
             for (int i = 0 ; i < checkedEmployees.Length; i++)
             {
                 if (checkedEmployees[i])
