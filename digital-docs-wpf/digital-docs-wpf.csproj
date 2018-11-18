@@ -56,7 +56,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="XmlTransformer.cs" />
-    <Page Include="AssignEmployeeWindow.xaml" />
     <Page Include="User1\User1_NewTasks.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -67,9 +66,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AssignEmployeeWindow.xaml.cs">
-      <DependentUpon>AssignEmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mail.cs" />
     <Compile Include="User1\User1_NewTasks.xaml.cs">

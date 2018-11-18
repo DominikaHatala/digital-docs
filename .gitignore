@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/digital-docs-wpf/v15/Server/sqlite3/db.lock
+/.vs/
+digital-docs-wpf/bin/
+digital-docs-wpf/obj/
+*.csproj

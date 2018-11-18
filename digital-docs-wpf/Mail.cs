@@ -4,6 +4,9 @@ using System.Net.Mail;
 using System.Collections.Generic;
 using System.Windows;
 using Microsoft.Win32;
+using System.Xml;
+using System.Text;
+
 
 namespace digital_docs_wpf
 {
@@ -66,9 +69,55 @@ namespace digital_docs_wpf
        
         }
 
-        public void fetch()
+        public List<Mail> fetch()
         {
+            List<Mail> listItems = new List<Mail>();
+            try
+            {
+                System.Net.WebClient objClient = new System.Net.WebClient();
+                string id;
+                string response;
+                string title;
+                string content;
 
+                //Creating a new xml document
+                XmlDocument doc = new XmlDocument();
+
+                //Logging in Gmail server to get data
+                objClient.Credentials = new System.Net.NetworkCredential("dokumenty.cyfrowe2018@gmail.com", "DCDC2018");
+                //reading data and converting to string
+                response = Encoding.UTF8.GetString(objClient.DownloadData(@"https://mail.google.com/mail/feed/atom"));
+
+                response = response.Replace(@"<feed version=""0.3"" xmlns=""http://purl.org/atom/ns#"">", @"<feed>");
+
+                //loading into an XML so we can get information easily
+                doc.LoadXml(response);
+
+                //nr of emails
+                string nr = doc.SelectSingleNode(@"/feed/fullcount").InnerText;
+
+                
+                //Reading the title and the summary for every email
+                foreach (XmlNode node in doc.SelectNodes(@"/feed/entry"))
+
+                {
+                    title = node.SelectSingleNode("title").InnerText;
+                    content = node.SelectSingleNode("summary").InnerText;
+                    id = node.SelectSingleNode("id").InnerText;
+                    //Console.WriteLine(title);
+                    //Console.WriteLine(summary);
+
+                    //listView.Items.Clear();
+                    Mail obj = new Mail { Title = title };
+                    listItems.Add(obj);
+                }
+            }
+            catch (Exception exe)
+            {
+                Console.WriteLine(exe);
+                MessageBox.Show("Check your network connection");
+            }
+            return listItems;
         }
 
         public string addAttachment()

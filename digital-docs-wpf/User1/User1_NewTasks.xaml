@@ -29,7 +29,7 @@
         <Button Grid.Row="4" Grid.Column="3" Content="Attachment" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" Width="101" Click="Attachment_OnClick" Margin="21.6,25,27.8,0" Height="41"/>
 
 
-        <ListView Grid.Row="1" Grid.RowSpan="3" x:Name="listView" Margin="10,0,25,0" SelectionChanged="listView_SelectionChanged">
+        <ListView Grid.Row="1" Grid.RowSpan="3" Name="listView" Margin="10,0,25,0" SelectionChanged="listView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}"/>
@@ -38,7 +38,6 @@
             </ListView.View>
         </ListView>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="300" Width="725"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <CheckBox Content="Employee #2" Grid.Column="4" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="E2checked" Unchecked="E2checked"/>
         <CheckBox Content="Employee #3" Grid.Column="4" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="E3checked" Unchecked="E3checked"/>
         <CheckBox Content="Employee #4" Grid.Column="4" HorizontalAlignment="Left" Margin="10,68,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="E4checked" Unchecked="E4checked"/>
