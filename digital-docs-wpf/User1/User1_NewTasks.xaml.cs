@@ -4,21 +4,32 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml;
+using System.Net.Mail;
+using System.Net;
+using System.Collections.Generic;
+
 
 namespace digital_docs_wpf
 {
     public partial class User1_NewTasks : Window
     {
+        bool[] checkedEmployees = new bool[] { false, false, false }; // employees: 2,3,4
+
         public User1_NewTasks()
         {
             InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void Accept_OnClick(object sender, RoutedEventArgs e)
         {
-            var newForm = new AssignEmployeeWindow();
-            newForm.Show();
-            Close();
+            for (int i = 0 ; i < checkedEmployees.Length; i++)
+            {
+                if (checkedEmployees[i])
+                {
+                    Mail mail = new Mail();
+                    mail.send(i+2);
+                }
+            }
         }
 
         private void listView_Click(object sender, MouseButtonEventArgs e)
@@ -31,7 +42,7 @@ namespace digital_docs_wpf
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void FetchMails_onClick(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -87,7 +98,20 @@ namespace digital_docs_wpf
             Console.WriteLine(obj.SelectedItem);
         }
 
- 
+        private void E2checked(object sender, RoutedEventArgs e)
+        {
+            checkedEmployees[0] = !checkedEmployees[0];
+        }
+
+        private void E3checked(object sender, RoutedEventArgs e)
+        {
+            checkedEmployees[1] = !checkedEmployees[1];
+        }
+
+        private void E4checked(object sender, RoutedEventArgs e)
+        {
+            checkedEmployees[2] = !checkedEmployees[2];
+        }
 
     }
 }
