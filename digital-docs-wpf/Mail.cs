@@ -32,7 +32,7 @@ namespace digital_docs_wpf
         public string Content { get; set; }
 
        // public string Content { get; set; }
-       public void send(int employeeNumber, string fileName)
+       public void send(int employeeNumber, string fileName, int employeesIncludedNumber)
         {            
             string fromMail = employeeCredentails[0].Key;
             string fromPassword = employeeCredentails[0].Value;
@@ -55,9 +55,7 @@ namespace digital_docs_wpf
             mailDetails.Subject = mailSubject;
             mailDetails.Body = mailBody;
 
-            // @todo: decide what have to be send...
-
-            mailDetails.Headers.Add("X-SampleHeader", "Just works!");
+            mailDetails.Headers.Add("X-EmployeesIncludedNumber", employeesIncludedNumber.ToString());
 
             //file attachment
             if (fileName.Length > 0)
