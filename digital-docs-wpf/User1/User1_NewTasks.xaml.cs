@@ -60,7 +60,11 @@ namespace digital_docs_wpf
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ListView obj = sender as ListView;
-            Console.WriteLine(obj.SelectedItem);
+            if (listView.Items.Count > 0)
+            {
+                Mail mail = listView.Items[obj.SelectedIndex] as Mail;
+                mailContentBox.Text = mail.Content;
+            }
         }
 
         private void E2checked(object sender, RoutedEventArgs e)
