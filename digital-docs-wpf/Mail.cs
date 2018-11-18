@@ -29,6 +29,8 @@ namespace digital_docs_wpf
 
         public string Title { get; set; }
 
+        public string Content { get; set; }
+
        // public string Content { get; set; }
        public void send(int employeeNumber, string fileName)
         {            
@@ -108,7 +110,7 @@ namespace digital_docs_wpf
                     //Console.WriteLine(summary);
 
                     //listView.Items.Clear();
-                    Mail obj = new Mail { Title = title };
+                    Mail obj = new Mail { Title = title, Content = content };
                     listItems.Add(obj);
                 }
             }
