@@ -2,7 +2,7 @@
 # Ten plik .gitignore został utworzony automatycznie przez Microsoft(R) Visual Studio.
 ################################################################################
 
-.vs/digital-docs-wpf/v15/Server/sqlite3/db.lock
-.vs/
-digital-docs/bin/
-digital-docs/obj/
+/.vs/digital-docs-wpf/v15/Server/sqlite3/db.lock
+/.vs/
+digital-docs-wpf/bin/
+digital-docs-wpf/obj/
