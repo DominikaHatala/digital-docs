@@ -6,3 +6,4 @@
 /.vs/
 digital-docs-wpf/bin/
 digital-docs-wpf/obj/
+*.csproj

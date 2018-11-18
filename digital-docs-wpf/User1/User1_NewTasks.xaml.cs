@@ -50,10 +50,11 @@ namespace digital_docs_wpf
             listView.Items.Clear();
             Mail mail = new Mail();
             List<Mail> listItems = mail.fetch();
-            Console.WriteLine(listItems);
-    
-            //listView.Items.Add() = listItems;
 
+            foreach (var item in listItems)
+            {
+                listView.Items.Add(item);
+            }
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
