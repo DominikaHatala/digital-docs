@@ -41,14 +41,10 @@ C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\bin\Debug\digital_docs_
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\bin\Debug\digital_docs_wpf.pdb
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\digital-docs-wpf.csprojAssemblyReference.cache
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\AssignEmployeeWindow.g.cs
-C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\MailWindow.g.cs
-C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\MainWindow.g.cs
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\App.g.cs
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf_MarkupCompile.cache
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf_MarkupCompile.lref
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\AssignEmployeeWindow.baml
-C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\MailWindow.baml
-C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\MainWindow.baml
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf.g.resources
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf.Properties.Resources.resources
 C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\digital-docs-wpf.csproj.GenerateResource.cache
@@ -119,3 +115,10 @@ C:\Users\maciej.kankowski\Documents\digital-docs\digital-docs-wpf\obj\Debug\digi
 C:\Users\maciej.kankowski\Documents\digital-docs\digital-docs-wpf\obj\Debug\digital-docs-wpf.csproj.GenerateResource.Cache
 C:\Users\maciej.kankowski\Documents\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf.exe
 C:\Users\maciej.kankowski\Documents\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf.pdb
+C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\bin\Debug\DigitalDocsDatabase.sql
+C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\User1\User1_NewTasks.g.cs
+C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\LoginView.g.cs
+C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\digital_docs_wpf_Content.g.cs
+C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\User1\User1_NewTasks.baml
+C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\LoginView.baml
+C:\Users\Kuba\Source\Repos\digital-docs\digital-docs-wpf\obj\Debug\digital-docs-wpf.csproj.CopyComplete

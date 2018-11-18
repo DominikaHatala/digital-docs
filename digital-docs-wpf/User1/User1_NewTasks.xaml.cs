@@ -15,6 +15,8 @@ namespace digital_docs_wpf
     {
         bool[] checkedEmployees = new bool[] { false, false, false }; // employees: 2,3,4
 
+        public String fileName = "";
+
         public User1_NewTasks()
         {
             InitializeComponent();
@@ -27,9 +29,15 @@ namespace digital_docs_wpf
                 if (checkedEmployees[i])
                 {
                     Mail mail = new Mail();
-                    mail.send(i+2);
+                    mail.send(i+2, fileName);
                 }
             }
+        }
+
+        private void Attachment_OnClick(object sender, RoutedEventArgs e)
+        {
+            Mail mail = new Mail();
+            fileName = mail.addAttachment();
         }
 
         private void listView_Click(object sender, MouseButtonEventArgs e)
@@ -112,6 +120,7 @@ namespace digital_docs_wpf
         {
             checkedEmployees[2] = !checkedEmployees[2];
         }
+
 
     }
 }

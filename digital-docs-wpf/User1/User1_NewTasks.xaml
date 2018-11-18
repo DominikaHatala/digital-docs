@@ -26,6 +26,7 @@
         <Button Grid.Column="0" Content="Fetch offers" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="10" Width="115" Margin="10,0,25,10" Click="FetchMails_onClick" Height="65"/>
         <Button Grid.Row="4" Grid.Column="5" Content="Accept" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Width="115" Click="Accept_OnClick" Height="70" Margin="10,10,75,20"/>
         <Button Grid.Row="4" Grid.Column="0" Content="Reject" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" Width="115" Margin="10,10,25,0" Height="70"/>
+        <Button Grid.Row="4" Grid.Column="3" Content="Attachment" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" Width="101" Click="Attachment_OnClick" Margin="21.6,25,27.8,0" Height="41"/>
 
 
         <ListView Grid.Row="1" Grid.RowSpan="3" x:Name="listView" Margin="10,0,25,0" SelectionChanged="listView_SelectionChanged">
