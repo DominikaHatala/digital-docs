@@ -185,7 +185,7 @@ namespace digital_docs_wpf
 
         }
 
-        static void AddOrderInformation(XmlDocument xmlDocdest, XmlNode orderNode, String orderNumber, String status, String clientId, String clientName, String clientSurname)
+        public static void AddOrderInformation(XmlDocument xmlDocdest, XmlNode orderNode, String orderNumber, String status, String clientId, String clientName, String clientSurname)
         {
             /*
             <orderNumber>orderNumber</orderNumber>
@@ -221,7 +221,7 @@ namespace digital_docs_wpf
             orderNode.AppendChild(clientNode);
         }
 
-        static void AddProduct(XmlDocument xmlDocdest, XmlNode orderNode, XmlNode product)
+        public static void AddProduct(XmlDocument xmlDocdest, XmlNode orderNode, XmlNode product)
         {
             /*
             <product>
