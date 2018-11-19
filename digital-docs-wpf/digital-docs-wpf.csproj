@@ -35,13 +35,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="SQLite.NET, Version=0.21.1869.3794, Culture=neutral, PublicKeyToken=c273bd375e695f9c">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\SQLite.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
@@ -58,11 +64,15 @@
     <Compile Include="User1\User1_ToComplete.xaml.cs">
       <DependentUpon>User1_ToComplete.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExcelDialog.xaml.cs" />
+    <Compile Include="ExcelManager.cs" />
     <Compile Include="User2-4\User234_InProgress.xaml.cs">
       <DependentUpon>User234_InProgress.xaml</DependentUpon>
     </Compile>
     <Compile Include="XmlTransformer.cs" />
     <Page Include="User1\User1_ToComplete.xaml">
+    <Page Include="ExcelDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="User1\User1_NewTasks.xaml">
@@ -105,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DigitalDocsDatabase.sql">
