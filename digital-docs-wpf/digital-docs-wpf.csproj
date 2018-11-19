@@ -64,6 +64,7 @@
     <Compile Include="ExcelDialog.xaml.cs">
       <DependentUpon>ExcelDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExcelManager.cs" />
     <Compile Include="XmlTransformer.cs" />
     <Page Include="AssignEmployeeWindow.xaml" />
     <Page Include="ExcelDialog.xaml">
