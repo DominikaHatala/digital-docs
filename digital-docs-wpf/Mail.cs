@@ -31,6 +31,8 @@ namespace digital_docs_wpf
 
         public string Content { get; set; }
 
+        public string Attachment { get; set; }
+
         // public string Content { get; set; }
         public void send(int employeeNumber, string fileName, int employeesIncludedNumber)
         {
@@ -112,6 +114,7 @@ namespace digital_docs_wpf
                 string response;
                 string title;
                 string content;
+                string attachment;
 
                 //Creating a new xml document
                 XmlDocument doc = new XmlDocument();
@@ -153,11 +156,13 @@ namespace digital_docs_wpf
                     title = node.SelectSingleNode("title").InnerText;
                     content = node.SelectSingleNode("summary").InnerText;
                     id = node.SelectSingleNode("id").InnerText;
+                    //attachment = node.SelectSingleNode("attachment").InnerText;
+
                     //Console.WriteLine(title);
                     //Console.WriteLine(summary);
 
                     //listView.Items.Clear();
-                    Mail obj = new Mail {Title = title, Content = content};
+                    Mail obj = new Mail {Title = title, Content = content /*, Attachment = attachment */ };
                     listItems.Add(obj);
                 }
             }
@@ -186,6 +191,11 @@ namespace digital_docs_wpf
             }
 
             return "";
+        }
+
+        public void downloadAttachment(String selectedMailAttachment)
+        {
+            String mailAttachment = selectedMailAttachment;
         }
     }
 }

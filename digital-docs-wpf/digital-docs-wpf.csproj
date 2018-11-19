@@ -55,10 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="User1\User1_ToComplete.xaml.cs">
+      <DependentUpon>User1_ToComplete.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User2-4\User234_InProgress.xaml.cs">
       <DependentUpon>User234_InProgress.xaml</DependentUpon>
     </Compile>
     <Compile Include="XmlTransformer.cs" />
+    <Page Include="User1\User1_ToComplete.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="User1\User1_NewTasks.xaml">
       <SubType>Designer</SubType>
     </Page>

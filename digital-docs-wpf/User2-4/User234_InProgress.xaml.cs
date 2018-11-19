@@ -12,6 +12,7 @@ namespace digital_docs_wpf
     {
         private String currentUser;
         public String fileName = "";
+        public Mail selectedMail = null;
 
         public User234_InProgress(String currentUser)
         {
@@ -58,6 +59,7 @@ namespace digital_docs_wpf
             if (listView.Items.Count > 0)
             {
                 Mail mail = listView.Items[obj.SelectedIndex] as Mail;
+                selectedMail = mail;
                 mailContentBox.Text = mail.Content;
             }
         }
@@ -67,6 +69,15 @@ namespace digital_docs_wpf
             var newForm = new LoginView();
             newForm.Show();
             Close();
+        }
+
+        private void DownloadAttachment_OnClick(object sender, RoutedEventArgs e)
+        {
+            Mail mail = new Mail();
+            if (selectedMail != null && selectedMail.Attachment != null)
+            {
+                mail.downloadAttachment(selectedMail.Attachment);
+            }
         }
     }
 }
