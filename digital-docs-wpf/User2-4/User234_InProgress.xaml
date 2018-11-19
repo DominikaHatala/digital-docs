@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:digital_docs_wpf"
         mc:Ignorable="d"
-        Title="User234_InProgress" Height="300" Width="300">
-    <Grid>
-        
+        Title="User234_InProgress" Height="527.5" Width="897.5">
+     <Grid Margin="0,0,5,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="96"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Content="Fetch offers" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="10" Width="115" Margin="10,0,25,10" Click="FetchMails_onClick" Height="65"/>
+         <Button Grid.Row="4" Grid.Column="1" Content="Back to login" HorizontalAlignment="Center" VerticalAlignment="Center" Width="115" Click="BackToLogin_OnClick" Height="70" Margin="-10,0,25,10"/>
+         <Button Grid.Row="4" Grid.Column="5" Content="Accept" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Width="115" Click="Accept_OnClick" Height="70" Margin="10,10,75,20"/>
+         <Button Grid.Row="4" Grid.Column="4" Content="Attachment" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10" Width="100" Click="Attachment_OnClick" Margin="21.6,25,27.8,0" Height="41"/>
+
+
+        <ListView Grid.Row="1" Grid.RowSpan="3" Name="listView" Margin="10,0,25,0" SelectionChanged="listView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox Name="mailContentBox" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="5" Height="300" Width="725"/>
     </Grid>
 </Window>

@@ -49,7 +49,7 @@ namespace digital_docs_wpf
         {
             listView.Items.Clear();
             Mail mail = new Mail();
-            List<Mail> listItems = mail.fetch();
+            List<Mail> listItems = mail.fetch("user1");
 
             foreach (var item in listItems)
             {
@@ -83,5 +83,11 @@ namespace digital_docs_wpf
         }
 
 
+        private void BackToLogin_OnClick(object sender, RoutedEventArgs e)
+        {
+            var newForm = new LoginView();
+            newForm.Show();
+            Close();
+        }
     }
 }

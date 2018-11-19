@@ -37,7 +37,8 @@ namespace digital_docs_wpf
                 || (currentUser == "user3" && currentPassword == passwords[2])
                 || (currentUser == "user4" && currentPassword == passwords[3]))
             {
-                var newForm = new User234_InProgress();
+             
+                var newForm = new User234_InProgress(currentUser);
                 newForm.Show();
                 XmlTransformer xmlTranformer = new XmlTransformer();
                 Close();
