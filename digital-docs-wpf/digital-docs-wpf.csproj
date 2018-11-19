@@ -71,6 +71,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="User2-4\User234_InProgress.xaml.cs">
+      <DependentUpon>User234_InProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XmlTransformer.cs" />
     <Page Include="User1\User1_NewTasks.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -82,9 +86,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AssignEmployeeWindow.xaml.cs">
-      <DependentUpon>AssignEmployeeWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Mail.cs" />
     <Compile Include="User1\User1_NewTasks.xaml.cs">
       <DependentUpon>User1_NewTasks.xaml</DependentUpon>
@@ -93,6 +94,10 @@
       <DependentUpon>LoginView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="User2-4\User234_InProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

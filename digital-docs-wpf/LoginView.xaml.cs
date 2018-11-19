@@ -20,23 +20,31 @@ namespace digital_docs_wpf
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs routedEventArgs)
         {
-            switch (currentUser)
+            if (currentUser == "user1")
             {
-                case "user1":
-                    if (currentPassword == passwords[0])
-                    {
-                        var newForm = new User1_NewTasks();
-                        newForm.Show();
-                        XmlTransformer xmlTranformer = new XmlTransformer();
-                        Close();
-                    } else
-                    {
-                        MessageBox.Show("Incorrect password");
-                    }
-                    break;
-                default:
-                    MessageBox.Show("Incorrect credentails");
-                    break;
+                if (currentPassword == passwords[0])
+                {
+                    var newForm = new User1_NewTasks();
+                    newForm.Show();
+                    XmlTransformer xmlTranformer = new XmlTransformer();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect password");
+                }
+            } else if ((currentUser == "user2" && currentPassword == passwords[1] )
+                || (currentUser == "user3" && currentPassword == passwords[2])
+                || (currentUser == "user4" && currentPassword == passwords[3]))
+            {
+                var newForm = new User234_InProgress();
+                newForm.Show();
+                XmlTransformer xmlTranformer = new XmlTransformer();
+                Close();
+            } else
+            {
+                MessageBox.Show("Incorrect credentails");
+
             }
         }
 
