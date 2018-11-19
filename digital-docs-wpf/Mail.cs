@@ -15,9 +15,9 @@ namespace digital_docs_wpf
         List<KeyValuePair<string, string>> employeeCredentails = new List<KeyValuePair<string, string>>()
         {
             new KeyValuePair<string, string>("dokumenty.cyfrowe2018@gmail.com", "DCDC2018"),
-            new KeyValuePair<string, string>("dokumenty.cyfrowe2018@gmail.com", "DCDC2018"),
-            new KeyValuePair<string, string>("dokumenty.cyfrowe2018@gmail.com", "DCDC2018"),
-            new KeyValuePair<string, string>("dokumenty.cyfrowe2018@gmail.com", "DCDC2018"),
+            new KeyValuePair<string, string>("dokumenty.cyfrowe2@gmail.com", "DCDC2018"),
+            new KeyValuePair<string, string>("dokumenty.cyfrowe3@gmail.com", "DCDC2018"),
+            new KeyValuePair<string, string>("dokumenty.cyfrowe4@gmail.com", "DCDC2018")
         };
 
         string mailClientAddress = "smtp.gmail.com";
@@ -31,9 +31,11 @@ namespace digital_docs_wpf
 
         public string Content { get; set; }
 
-       // public string Content { get; set; }
-       public void send(int employeeNumber, string fileName, int employeesIncludedNumber)
-        {            
+        public string Attachment { get; set; }
+
+        // public string Content { get; set; }
+        public void send(int employeeNumber, string fileName, int employeesIncludedNumber)
+        {
             string fromMail = employeeCredentails[0].Key;
             string fromPassword = employeeCredentails[0].Value;
             string toMail = employeeCredentails[employeeNumber - 1].Key;
@@ -66,10 +68,43 @@ namespace digital_docs_wpf
 
             clientDetails.Send(mailDetails);
             MessageBox.Show("Your mail has been sent.");
-       
+        }
+        
+        public void send(string fromMail, string toMail, string fileName)
+        {
+            string fromPassword = "DCDC2018";
+            string mailSubject = "mailSubject";
+            string mailBody = "mailBody";
+
+            SmtpClient clientDetails = new SmtpClient();
+
+            clientDetails.Port = 587;
+            clientDetails.Host = mailClientAddress;
+            clientDetails.EnableSsl = true;
+            clientDetails.DeliveryMethod = SmtpDeliveryMethod.Network;
+            clientDetails.UseDefaultCredentials = false;
+            clientDetails.Credentials = new NetworkCredential(fromMail, fromPassword);
+
+            MailMessage mailDetails = new MailMessage();
+            mailDetails.From = new MailAddress(fromMail);
+            mailDetails.To.Add(toMail);
+            mailDetails.Subject = mailSubject;
+            mailDetails.Body = mailBody;
+
+//            mailDetails.Headers.Add("X-EmployeesIncludedNumber", employeesIncludedNumber.ToString());
+
+            //file attachment
+            if (fileName.Length > 0)
+            {
+                Attachment attachment = new Attachment(fileName);
+                mailDetails.Attachments.Add(attachment);
+            }
+
+            clientDetails.Send(mailDetails);
+            MessageBox.Show("Your mail has been sent.");
         }
 
-        public List<Mail> fetch()
+        public List<Mail> fetch(String currentUser)
         {
             List<Mail> listItems = new List<Mail>();
             try
@@ -79,12 +114,29 @@ namespace digital_docs_wpf
                 string response;
                 string title;
                 string content;
+                string attachment;
 
                 //Creating a new xml document
                 XmlDocument doc = new XmlDocument();
 
                 //Logging in Gmail server to get data
-                objClient.Credentials = new System.Net.NetworkCredential("dokumenty.cyfrowe2018@gmail.com", "DCDC2018");
+                if (string.Equals(currentUser, "user1"))
+                {
+                    objClient.Credentials = new NetworkCredential("dokumenty.cyfrowe2018@gmail.com", "DCDC2018");
+                }
+                else if (string.Equals(currentUser, "user2"))
+                {
+                    objClient.Credentials = new NetworkCredential("dokumenty.cyfrowe2@gmail.com", "DCDC2018");
+                }
+                else if (string.Equals(currentUser, "user3"))
+                {
+                    objClient.Credentials = new NetworkCredential("dokumenty.cyfrowe3@gmail.com", "DCDC2018");
+                }
+                else if (string.Equals(currentUser, "user4"))
+                {
+                    objClient.Credentials = new NetworkCredential("dokumenty.cyfrowe4@gmail.com", "DCDC2018");
+                }
+
                 //reading data and converting to string
                 response = Encoding.UTF8.GetString(objClient.DownloadData(@"https://mail.google.com/mail/feed/atom"));
 
@@ -96,7 +148,7 @@ namespace digital_docs_wpf
                 //nr of emails
                 string nr = doc.SelectSingleNode(@"/feed/fullcount").InnerText;
 
-                
+
                 //Reading the title and the summary for every email
                 foreach (XmlNode node in doc.SelectNodes(@"/feed/entry"))
 
@@ -104,11 +156,13 @@ namespace digital_docs_wpf
                     title = node.SelectSingleNode("title").InnerText;
                     content = node.SelectSingleNode("summary").InnerText;
                     id = node.SelectSingleNode("id").InnerText;
+                    //attachment = node.SelectSingleNode("attachment").InnerText;
+
                     //Console.WriteLine(title);
                     //Console.WriteLine(summary);
 
                     //listView.Items.Clear();
-                    Mail obj = new Mail { Title = title, Content = content };
+                    Mail obj = new Mail {Title = title, Content = content /*, Attachment = attachment */ };
                     listItems.Add(obj);
                 }
             }
@@ -117,6 +171,7 @@ namespace digital_docs_wpf
                 Console.WriteLine(exe);
                 MessageBox.Show("Check your network connection");
             }
+
             return listItems;
         }
 
@@ -134,8 +189,13 @@ namespace digital_docs_wpf
             {
                 MessageBox.Show(ex.Message);
             }
+
             return "";
         }
 
-    }  
+        public void downloadAttachment(String selectedMailAttachment)
+        {
+            String mailAttachment = selectedMailAttachment;
+        }
+    }
 }

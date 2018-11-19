@@ -61,12 +61,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="User1\User1_ToComplete.xaml.cs">
+      <DependentUpon>User1_ToComplete.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExcelDialog.xaml.cs" />
     <Compile Include="ExcelManager.cs" />
     <Compile Include="User2-4\User234_InProgress.xaml.cs">
       <DependentUpon>User234_InProgress.xaml</DependentUpon>
     </Compile>
     <Compile Include="XmlTransformer.cs" />
+    <Page Include="User1\User1_ToComplete.xaml">
+          <SubType>Designer</SubType>
+    </Page>
     <Page Include="ExcelDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

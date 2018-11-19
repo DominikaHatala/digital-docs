@@ -6,28 +6,25 @@ using System.Collections.Generic;
 
 namespace digital_docs_wpf
 {
-    public partial class User1_NewTasks : Window
+    public partial class User1_ToComplete : Window
     {
         bool[] checkedEmployees = new bool[] { false, false, false }; // employees: 2,3,4
 
         public String fileName = "";
 
-        public User1_NewTasks()
+        public User1_ToComplete()
         {
             InitializeComponent();
         }
 
         private void Accept_OnClick(object sender, RoutedEventArgs e)
         {
-            var window = new ExcelDialog();
-            window.Show();
-
-            for (int i = 0 ; i < checkedEmployees.Length; i++)
+            for (int i = 0; i < checkedEmployees.Length; i++)
             {
                 if (checkedEmployees[i])
                 {
                     Mail mail = new Mail();
-                    mail.send(i+2, fileName, checkedEmployees.Length);
+                    mail.send(i + 2, fileName, checkedEmployees.Length);
                 }
             }
         }
@@ -93,9 +90,8 @@ namespace digital_docs_wpf
             Close();
         }
 
-        private void OpenToComplete_OnClick(object sender, RoutedEventArgs e)
-        {
-            var newForm = new User1_ToComplete();
+        private void OpenNewTasks_OnClick(object sender, RoutedEventArgs e) {
+            var newForm = new User1_NewTasks();
             newForm.Show();
             Close();
         }
