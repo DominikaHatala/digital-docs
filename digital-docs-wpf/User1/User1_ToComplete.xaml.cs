@@ -72,7 +72,7 @@ namespace digital_docs_wpf
                         if (m.ID == v.Key)
                         {
                             mails.Add(m);
-                            m.downloadAttachment(m.Attachment); //pobierz nag³owek 
+                            m.downloadAttachment(m.Attachment, m.Content); //pobierz nag³owek 
                         }                
 
                     //scalanie xmli
