@@ -74,10 +74,19 @@ namespace digital_docs_wpf
         private void DownloadAttachment_OnClick(object sender, RoutedEventArgs e)
         {
             Mail mail = new Mail();
-            if (selectedMail != null && selectedMail.Attachment != null)
+            //if (selectedMail != null && selectedMail.Attachment != null)
+            //{
+            string currentMail = "dokumenty.cyfrowe2@gmail.com ";
+            if (currentUser.Equals("user3"))
             {
-                mail.downloadAttachment(selectedMail.Attachment);
+                currentMail = "dokumenty.cyfrowe3@gmail.com";
             }
+            else if (currentUser.Equals("user4"))
+            {
+                currentMail = "dokumenty.cyfrowe4@gmail.com";
+            }
+            mail.downloadAttachment(currentMail, selectedMail.Content);
+            //}
         }
     }
 }
