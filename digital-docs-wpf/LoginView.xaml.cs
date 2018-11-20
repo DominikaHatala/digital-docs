@@ -26,7 +26,6 @@ namespace digital_docs_wpf
                 {
                     var newForm = new User1_NewTasks();
                     newForm.Show();
-                    XmlTransformer xmlTranformer = new XmlTransformer();
                     Close();
                 }
                 else

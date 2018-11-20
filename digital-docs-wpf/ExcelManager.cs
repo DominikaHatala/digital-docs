@@ -80,7 +80,9 @@ namespace digital_docs_wpf
                 }
             }
 
-            xmlDoc.Save("..\\..\\xmls_result\\excel_order.xml");
+            String orderPath = "..\\..\\xmls_result\\excel_order.xml";
+            xmlDoc.Save(orderPath);
+            XmlTransformer.DivideOrders(orderPath);
         }
     }
 }

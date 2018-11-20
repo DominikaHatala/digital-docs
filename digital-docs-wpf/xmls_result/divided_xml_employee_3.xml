@@ -1,0 +1,17 @@
+<orders>
+  <order>
+    <orderNumber>2</orderNumber>
+    <status>s</status>
+    <client>
+      <id>2</id>
+      <name>s</name>
+      <surname>s</surname>
+    </client>
+    <product>
+      <type>2</type>
+      <detail>d</detail>
+      <amount>3</amount>
+      <status>E3</status>
+    </product>
+  </order>
+</orders>

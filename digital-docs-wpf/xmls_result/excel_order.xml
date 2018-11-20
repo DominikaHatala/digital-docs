@@ -1,22 +1,22 @@
 <orders>
   <order>
-    <orderNumber>1</orderNumber>
+    <orderNumber>2</orderNumber>
     <status>s</status>
     <client>
       <id>2</id>
-      <name>x</name>
-      <surname>c</surname>
+      <name>s</name>
+      <surname>s</surname>
     </client>
     <product>
       <type>1</type>
-      <detail>s</detail>
-      <amount>1</amount>
+      <detail>d</detail>
+      <amount>3</amount>
       <status>E2</status>
     </product>
     <product>
       <type>2</type>
-      <detail>s</detail>
-      <amount>1</amount>
+      <detail>d</detail>
+      <amount>3</amount>
       <status>E3</status>
     </product>
   </order>

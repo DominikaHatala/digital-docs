@@ -39,26 +39,17 @@ namespace digital_docs_wpf
     {
         public XmlTransformer()
         {
-            String path1 = "..\\..\\xmls\\SampleXml.xml";
-            String path2 = "..\\..\\xmls\\SampleXml2.xml";
-            String path3 = "..\\..\\xmls\\SampleXml3.xml";
+            String path1 = "..\\..\\xmls_result\\divided_xml_employee_1.xml";
+            String path2 = "..\\..\\xmls_result\\divided_xml_employee_2.xml";
 
-            String[] paths = { path1, path2, path3 };
+            String[] paths = { path1, path2};
 
-            Employee[] employees = new Employee[2];
-            employees[0] = new Employee();
-            employees[0].name = "employee1";
-            employees[0].products = new string[] { "1", "3" };
-            employees[1] = new Employee();
-            employees[1].name = "employee1";
-            employees[1].products = new string[] { "2" };
+            //MergeXmls(paths);
 
-            MergeXmls(paths);
-
-            DivideOrders(path1, employees);
+            //DivideOrders(path1);
         }
 
-        static void MergeXmls(String[] xmlPaths)
+        public static void MergeXmls(String[] xmlPaths)
         {
             IEnumerable<IGrouping<string, XmlNode>> orders = GetOrders(xmlPaths);
             SaveMergedOrders(orders);
@@ -133,8 +124,16 @@ namespace digital_docs_wpf
             xmlDoc.Save("..\\..\\xmls_result\\merged_xml.xml");
         }
 
-        static void DivideOrders(String xmlPath, Employee[] employees)
+        public static void DivideOrders(String xmlPath)
         {
+            Employee[] employees = new Employee[2];
+            employees[0] = new Employee();
+            employees[0].name = "employee1";
+            employees[0].products = new string[] { "1", "3" };
+            employees[1] = new Employee();
+            employees[1].name = "employee1";
+            employees[1].products = new string[] { "2" };
+
             List<XmlNode> products = new List<XmlNode>();
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(xmlPath);
@@ -180,7 +179,12 @@ namespace digital_docs_wpf
                     }
 
                 }
-                xmlDocdest.Save("..\\..\\xmls_result\\divided_xml_employee_" + i + ".xml");
+                int employeeNumber = i + 2;
+                String pathToXml = "..\\..\\xmls_result\\divided_xml_employee_" + employeeNumber + ".xml";
+                xmlDocdest.Save(pathToXml);
+                //xml to excel
+                Mail mail = new Mail();
+                mail.send(employeeNumber, pathToXml, 1);
             }
 
         }
