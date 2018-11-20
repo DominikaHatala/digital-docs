@@ -1,0 +1,30 @@
+﻿<Window x:Class="digital_docs_wpf.Archiver"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:digital_docs_wpf"
+        mc:Ignorable="d"
+        Title="LoginView" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Content="Archive" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+        <Button Grid.Row="4" Content="Back to login" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="77" Click="BackToLogin_OnClick" Height="34" Margin="0,0,123,-17" Grid.Column="1"/>
+        <TextBox Name="LoginBox" Grid.Column="1" Text="" Padding="10" Margin="10,64,10,0" TextChanged="LoginBox_TextChanged"/>
+        <Button Grid.Row="4" Grid.Column="1" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="ButtonBase_OnClick" Margin="133,31,10,-18"/>
+        <Label Content="Process Id:" HorizontalAlignment="Left" Margin="23,64,0,59" Width="77" Grid.RowSpan="2"/>
+        <ListBox Name="ListView"  Grid.Column="1" HorizontalAlignment="Left" Height="153" Margin="10,10,0,0" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Width="180"/>
+        <Button Content="Clear database" Grid.Column="2" HorizontalAlignment="Left" Margin="7,21,0,0" VerticalAlignment="Top" Width="83" Click="Button_Click"/>
+    </Grid>
+</Window>

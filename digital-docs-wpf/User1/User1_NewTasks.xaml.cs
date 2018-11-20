@@ -99,5 +99,12 @@ namespace digital_docs_wpf
             newForm.Show();
             Close();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var newForm = new Archiver();
+            newForm.Show();
+            Close();
+        }
     }
 }

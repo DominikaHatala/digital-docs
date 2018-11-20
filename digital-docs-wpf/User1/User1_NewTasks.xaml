@@ -40,5 +40,6 @@
         <CheckBox Content="Employee #3" Grid.Column="4" HorizontalAlignment="Left" Margin="10,38,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="E3checked" Unchecked="E3checked"/>
         <CheckBox Content="Employee #4" Grid.Column="4" HorizontalAlignment="Left" Margin="10,68,0,0" Grid.Row="4" VerticalAlignment="Top" Checked="E4checked" Unchecked="E4checked"/>
         <Button Grid.Column="4" Content=">> To Complete >>" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="10" Width="268" Margin="0,0,72,45" Click="OpenToComplete_OnClick" Height="45" Grid.ColumnSpan="2"/>
+        <Button Content="Archive" Grid.Column="2" HorizontalAlignment="Left" Margin="34,46,0,0" Grid.Row="4" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
     </Grid>
 </Window>
