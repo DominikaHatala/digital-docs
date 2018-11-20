@@ -22,12 +22,18 @@ namespace digital_docs_wpf
             var window = new ExcelDialog();
             window.Show();
 
+            var newProcess = Archiver.GetNewProcessId();
+            Archiver.AddActivity(newProcess, Archiver.ProcessActivity.odebranie_zamowienia.ToString());
+            Archiver.AddActivity(newProcess, Archiver.ProcessActivity.przygotowanie_arkusza.ToString());
+
             for (int i = 0 ; i < checkedEmployees.Length; i++)
             {
                 if (checkedEmployees[i])
                 {
                     Mail mail = new Mail();
-                    mail.send(i+2, fileName, checkedEmployees.Length);
+
+                    Archiver.AddActivity(newProcess, Archiver.ProcessActivity.uzupelnianie_zamowienia_pracownik_.ToString() + (i+2));
+                    mail.send(i+2, fileName, checkedEmployees.Length, newProcess);
                 }
             }
         }
@@ -105,6 +111,13 @@ namespace digital_docs_wpf
             var newForm = new Archiver();
             newForm.Show();
             Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var newProcess = Archiver.GetNewProcessId();
+            Archiver.AddActivity(newProcess, Archiver.ProcessActivity.odebranie_zamowienia.ToString());
+            Archiver.AddActivity(newProcess, Archiver.ProcessActivity.odrzucenie_zamowienia.ToString());
         }
     }
 }

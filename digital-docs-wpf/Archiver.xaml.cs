@@ -11,6 +11,17 @@ namespace digital_docs_wpf
     {
         #region Fields
 
+        public enum ProcessActivity
+        {
+            odebranie_zamowienia,
+            odrzucenie_zamowienia,
+            przygotowanie_arkusza,
+            uzupelnianie_zamowienia_pracownik_,
+            zatwierdzenie_oferty,
+            mail_klient,
+            wystawienie_strona,
+        }
+
         const string m_ConnectionString = "Data Source=.\\Archive.db;Version=3;New=True;";
         string m_SearchedString;
 
@@ -22,8 +33,43 @@ namespace digital_docs_wpf
         {
             InitializeComponent();
             CreateDataBase();
+
             for(int i =0;i < 10; i++)
             AddActivity("test", $"testActivity{i}");
+
+            ShowExistingProcesses();
+
+            GetNewProcessId();
+        }
+
+        public static string GetNewProcessId()
+        {
+            const string NamePrefix = "Process";
+
+            using (SQLiteConnection connection = new SQLiteConnection(m_ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand(connection))
+                {
+
+                    //update processes window
+                    command.CommandText = $"Select COUNT(DISTINCT ProcessId) FROM Archive GROUP BY ProcessId";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int howMany = int.Parse(reader["COUNT(DISTINCT ProcessId)"].ToString());
+                            ++howMany;
+                            return NamePrefix + howMany.ToString();
+                        }
+                    }
+
+
+                }
+                connection.Close(); // Close the connection to the database
+            }
+
+            return NamePrefix + "0";
         }
 
         public List<string> GetProcessHistory(string processId)
@@ -53,7 +99,7 @@ namespace digital_docs_wpf
             return history;
         }
 
-        public void AddActivity(string processId, string activityId)
+        public static void AddActivity(string processId, string activityId)
         {
             using (SQLiteConnection connection = new SQLiteConnection(m_ConnectionString))
             {
@@ -92,7 +138,34 @@ namespace digital_docs_wpf
             CreateDataBase();
         }
 
-        private void CreateDataBase()
+
+        private void ShowExistingProcesses()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(m_ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand(connection))
+                {
+
+                    //update processes window
+                    var previousProcesses = new List<string>();
+                    command.CommandText = $"Select ProcessId FROM Archive GROUP BY ProcessId";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            previousProcesses.Add((string)reader["ProcessId"]);
+                        }
+                    }
+                    procesy.ItemsSource = previousProcesses;
+
+
+                }
+                connection.Close(); // Close the connection to the database
+            }
+        }
+
+        public static void CreateDataBase()
         {
             using (SQLiteConnection connection = new SQLiteConnection(m_ConnectionString))
             {
@@ -108,7 +181,6 @@ namespace digital_docs_wpf
 
                                                )";
                     command.ExecuteNonQuery();
-
                 }
                 connection.Close(); // Close the connection to the database
             }
@@ -116,14 +188,11 @@ namespace digital_docs_wpf
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs routedEventArgs)
         {
-            ListView.ItemsSource = GetProcessHistory(m_SearchedString);
+            var text = procesy.SelectedItem.ToString();
+            ListView.ItemsSource = GetProcessHistory(text);
         }
 
-        private void LoginBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            m_SearchedString = LoginBox.Text;
-        }
-
+ 
         #endregion
 
         private void BackToLogin_OnClick(object sender, RoutedEventArgs e)
@@ -136,6 +205,11 @@ namespace digital_docs_wpf
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ClearDataBase();
+        }
+
+        private void procesy_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

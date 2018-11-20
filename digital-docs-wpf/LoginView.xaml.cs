@@ -16,6 +16,7 @@ namespace digital_docs_wpf
         public LoginView()
         {
             InitializeComponent();
+            Archiver.CreateDataBase();
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs routedEventArgs)

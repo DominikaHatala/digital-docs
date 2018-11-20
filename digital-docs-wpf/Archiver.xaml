@@ -21,10 +21,11 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="1" Content="Archive" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
         <Button Grid.Row="4" Content="Back to login" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="77" Click="BackToLogin_OnClick" Height="34" Margin="0,0,123,-17" Grid.Column="1"/>
-        <TextBox Name="LoginBox" Grid.Column="1" Text="" Padding="10" Margin="10,64,10,0" TextChanged="LoginBox_TextChanged"/>
-        <Button Grid.Row="4" Grid.Column="1" Content="Search" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="ButtonBase_OnClick" Margin="133,31,10,-18"/>
+        <Button Grid.Row="4" Grid.Column="1" Content="Show" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="ButtonBase_OnClick" Margin="133,31,10,-18"/>
         <Label Content="Process Id:" HorizontalAlignment="Left" Margin="23,64,0,59" Width="77" Grid.RowSpan="2"/>
-        <ListBox Name="ListView"  Grid.Column="1" HorizontalAlignment="Left" Height="153" Margin="10,10,0,0" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Width="180"/>
+        <ListBox Name="ListView"  Grid.Column="1" HorizontalAlignment="Left" Height="153" Margin="116,10,0,0" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Width="152" Grid.ColumnSpan="2"/>
         <Button Content="Clear database" Grid.Column="2" HorizontalAlignment="Left" Margin="7,21,0,0" VerticalAlignment="Top" Width="83" Click="Button_Click"/>
+        <ListBox Name="procesy" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="156" Margin="37,7,0,0" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.13,0.11" SelectionChanged="procesy_SelectionChanged"/>
+        <Label Content="Activity" Grid.Column="1" HorizontalAlignment="Left" Margin="146,64,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="122" Height="30"/>
     </Grid>
 </Window>

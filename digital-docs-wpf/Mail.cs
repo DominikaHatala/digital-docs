@@ -38,7 +38,7 @@ namespace digital_docs_wpf
         public string Attachment { get; set; }
 
         // public string Content { get; set; }
-        public void send(int employeeNumber, string fileName, int employeesIncludedNumber)
+        public void send(int employeeNumber, string fileName, int employeesIncludedNumber, string orderId = "")
         {
             string fromMail = employeeCredentails[0].Key;
             string fromPassword = employeeCredentails[0].Value;
@@ -63,7 +63,7 @@ namespace digital_docs_wpf
             mailDetails.Body = mailBody;
 
             mailDetails.Headers.Add("X-EmployeesIncludedNumber", employeesIncludedNumber.ToString());
-
+            mailDetails.Headers.Add("X-OrderId", orderId);
             //file attachment
             if (fileName.Length > 0)
             {
