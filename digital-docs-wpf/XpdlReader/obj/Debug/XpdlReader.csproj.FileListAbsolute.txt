@@ -1,0 +1,7 @@
+C:\Users\bakan\source\repos\XpdlReader\XpdlReader\bin\Debug\XpdlReader.exe.config
+C:\Users\bakan\source\repos\XpdlReader\XpdlReader\bin\Debug\XpdlReader.exe
+C:\Users\bakan\source\repos\XpdlReader\XpdlReader\bin\Debug\XpdlReader.pdb
+C:\Users\bakan\source\repos\XpdlReader\XpdlReader\obj\Debug\XpdlReader.csprojAssemblyReference.cache
+C:\Users\bakan\source\repos\XpdlReader\XpdlReader\obj\Debug\XpdlReader.csproj.CoreCompileInputs.cache
+C:\Users\bakan\source\repos\XpdlReader\XpdlReader\obj\Debug\XpdlReader.exe
+C:\Users\bakan\source\repos\XpdlReader\XpdlReader\obj\Debug\XpdlReader.pdb
