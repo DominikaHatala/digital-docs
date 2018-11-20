@@ -126,6 +126,8 @@ namespace digital_docs_wpf
 
         public static void DivideOrders(String xmlPath)
         {
+            int numberOfDividedFiles = 0;
+
             Employee[] employees = new Employee[2];
             employees[0] = new Employee();
             employees[0].name = "employee1";
@@ -171,6 +173,10 @@ namespace digital_docs_wpf
                     xmlDoc.DocumentElement.ChildNodes[0].ChildNodes[2].ChildNodes[1].InnerText,
                     xmlDoc.DocumentElement.ChildNodes[0].ChildNodes[2].ChildNodes[2].InnerText);
 
+                if(products.Count > 0 )
+                {
+                    numberOfDividedFiles++;
+                }
                 foreach (XmlNode product in products)
                 {
                     if (employees[i].products.Contains(product.ChildNodes[0].InnerText))
@@ -186,7 +192,7 @@ namespace digital_docs_wpf
                 Mail mail = new Mail();
                 mail.send(employeeNumber, pathToXml, 1);
             }
-
+            int result = numberOfDividedFiles;
         }
 
         public static void AddOrderInformation(XmlDocument xmlDocdest, XmlNode orderNode, String orderNumber, String status, String clientId, String clientName, String clientSurname)
