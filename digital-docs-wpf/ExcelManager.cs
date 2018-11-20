@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -83,6 +84,117 @@ namespace digital_docs_wpf
             String orderPath = "..\\..\\xmls_result\\excel_order.xml";
             xmlDoc.Save(orderPath);
             XmlTransformer.DivideOrders(orderPath);
+        }
+
+        public static void XmlToExcel(string pathToXML)
+        {
+            var xmlDoc = new XmlDataDocument();
+            FileInfo excelFile = new FileInfo(@"order.xlsx");
+
+
+            var fs = new FileStream(pathToXML, FileMode.Open, FileAccess.Read);
+            xmlDoc.Load(fs);
+
+            var root = xmlDoc.FirstChild;
+
+            var orders = root.ChildNodes;
+
+            using (var excel = new ExcelPackage())
+            {
+                var orderCount = 0;
+                foreach (XmlNode order in orders)
+                {
+
+                    excel.Workbook.Worksheets.Add("Order " + orderCount);
+
+                    var orderChildren = order.ChildNodes;
+
+                    #region boring_excel_header_voodo
+                    List<string[]> headerRow = new List<string[]>()
+                    {
+                      new string[] { "TYPE", "DETAIL", "AMOUNT", "STATUS" }
+                    };
+
+                    string headerRange = "B1:E1";
+
+                    var worksheet = excel.Workbook.Worksheets["Order " + orderCount];
+                    worksheet.Cells[headerRange].LoadFromArrays(headerRow);
+
+                    worksheet.Cells[headerRange].Style.Font.Bold = true;
+                    worksheet.Cells[headerRange].Style.Font.Size = 14;
+                    worksheet.Cells[headerRange].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[headerRange].Style.Font.Color.SetColor(System.Drawing.Color.Black);
+
+                    List<string[]> infoheaderRow = new List<string[]>()
+                {
+                  new string[] { "Order Number", "Status", "Client ID", "Client Name", "Client Surname"}
+                };
+
+                    var infoheaderRange = "G1:K1";
+                    worksheet.Cells[infoheaderRange].LoadFromArrays(infoheaderRow);
+
+                    worksheet.Cells[infoheaderRange].Style.Font.Bold = true;
+                    worksheet.Cells[infoheaderRange].Style.Font.Size = 12;
+                    worksheet.Cells[infoheaderRange].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    worksheet.Cells[infoheaderRange].Style.Font.Color.SetColor(System.Drawing.Color.MediumVioletRed);
+
+
+
+
+                    #endregion
+
+                    // General info
+                    var orderNumber = orderChildren[0].InnerText;
+                    worksheet.Cells["G2"].Value = orderNumber;
+
+                    var status = orderChildren[1].InnerText;
+                    worksheet.Cells["H2"].Value = status;
+
+                    // Client info
+                    var clientNode = orderChildren[2].ChildNodes;
+
+                    var clientId = clientNode[0].InnerText;
+                    worksheet.Cells["I2"].Value = clientId;
+
+                    var clientName = clientNode[1].InnerText;
+                    worksheet.Cells["J2"].Value = clientName;
+
+                    var clientSurname = clientNode[2].InnerText;
+                    worksheet.Cells["K2"].Value = clientSurname;
+
+
+                    // Parsing products
+                    for (int i = 3; i < orderChildren.Count; i++)
+                    {
+                        var productChildren = orderChildren[i].ChildNodes;
+
+                        var CellId = (i - 1);
+                        worksheet.Cells["A" + CellId].Value = "Product " + (i - 2);
+
+                        
+                        var type = productChildren[0].InnerText;
+                        worksheet.Cells["B" + CellId].Value = type;
+
+                        var detail = productChildren[1].InnerText;
+                        worksheet.Cells["C" + CellId].Value = detail;
+
+                        var amount = productChildren[2].InnerText;
+                        worksheet.Cells["D" + CellId].Value = amount;
+
+                        var productStatus = productChildren[3].InnerText;
+                        worksheet.Cells["E" + CellId].Value = productStatus;
+
+                    }
+
+                    worksheet.Cells[headerRange].AutoFitColumns();
+                    worksheet.Cells[infoheaderRange].AutoFitColumns();
+
+                    orderCount++;
+                    excel.SaveAs(excelFile);
+                }
+
+            }
+
         }
     }
 }
