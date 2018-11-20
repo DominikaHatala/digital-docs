@@ -51,9 +51,29 @@ namespace digital_docs_wpf
             Mail mail = new Mail();
             List<Mail> listItems = mail.fetch("user1");
 
+           
+            Dictionary<string, KeyValuePair<int, int>> sync 
+                = new Dictionary<string, KeyValuePair<int, int>>();
+
             foreach (var item in listItems)
             {
                 listView.Items.Add(item);
+
+                if(sync.Count == 0 || !sync.ContainsKey(item.ID)) //zliczaj maile które przysz³y
+                    sync.Add(item.ID, new KeyValuePair<int, int>(/*employeesIncluded*/3, 0));
+
+                sync[item.ID] = new KeyValuePair<int, int>(sync[item.ID].Key,sync[item.ID].Value+1);
+            }
+
+            foreach (var v in sync) {
+                if (v.Value.Key == v.Value.Value) { //sprawdzaj iloœæ maili
+                    List<Mail> mails = new List<Mail>(); //kontener na maile które chcemy zebraæ
+                    foreach (var m in listItems) 
+                        if (m.ID == v.Key)
+                            mails.Add(m);
+                    
+                    /*tutaj scalanie xmli, zgubi³em siê trochê w projekcie*/
+                }
             }
         }
 
