@@ -86,10 +86,10 @@ namespace digital_docs_wpf
             XmlTransformer.DivideOrders(orderPath);
         }
 
-        public static void XmlToExcel(string pathToXML)
+        public static void XmlToExcel(string pathToXML, string excelDestinationPath)
         {
             var xmlDoc = new XmlDataDocument();
-            FileInfo excelFile = new FileInfo(@"order.xlsx");
+            FileInfo excelFile = new FileInfo(excelDestinationPath);
 
 
             var fs = new FileStream(pathToXML, FileMode.Open, FileAccess.Read);

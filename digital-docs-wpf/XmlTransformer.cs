@@ -128,13 +128,16 @@ namespace digital_docs_wpf
         {
             int numberOfDividedFiles = 0;
 
-            Employee[] employees = new Employee[2];
+            Employee[] employees = new Employee[3];
             employees[0] = new Employee();
-            employees[0].name = "employee1";
-            employees[0].products = new string[] { "1", "3" };
+            employees[0].name = "employee2";
+            employees[0].products = new string[] { "1" };
             employees[1] = new Employee();
-            employees[1].name = "employee1";
+            employees[1].name = "employee3";
             employees[1].products = new string[] { "2" };
+            employees[2] = new Employee();
+            employees[2].name = "employee4";
+            employees[2].products = new string[] { "3" };
 
             List<XmlNode> products = new List<XmlNode>();
             XmlDocument xmlDoc = new XmlDocument();
@@ -157,6 +160,7 @@ namespace digital_docs_wpf
 
             for (int i = 0; i < employees.Length; i++)
             {
+                bool ifAnyProductMatchEmployee = false;
                 XmlDocument xmlDocdest = new XmlDocument();
 
                 XmlNode rootNode = xmlDocdest.CreateElement("orders");
@@ -173,26 +177,29 @@ namespace digital_docs_wpf
                     xmlDoc.DocumentElement.ChildNodes[0].ChildNodes[2].ChildNodes[1].InnerText,
                     xmlDoc.DocumentElement.ChildNodes[0].ChildNodes[2].ChildNodes[2].InnerText);
 
-                if(products.Count > 0 )
-                {
-                    numberOfDividedFiles++;
-                }
+                
                 foreach (XmlNode product in products)
                 {
                     if (employees[i].products.Contains(product.ChildNodes[0].InnerText))
                     {
                         AddProduct(xmlDocdest, orderNode, product);
+                        ifAnyProductMatchEmployee = true;
                     }
 
                 }
-                int employeeNumber = i + 2;
-                String pathToXml = "..\\..\\xmls_result\\divided_xml_employee_" + employeeNumber + ".xml";
-                xmlDocdest.Save(pathToXml);
-                //xml to excel
-                Mail mail = new Mail();
-                mail.send(employeeNumber, pathToXml, 1);
+                if (ifAnyProductMatchEmployee)
+                {
+                    int employeeNumber = i + 2;
+                    String pathToXml = "..\\..\\xmls_result\\divided_xml_employee_" + employeeNumber + ".xml";
+                    String pathToExcel = "..\\..\\excel_result\\divided_excel_employee_" + employeeNumber + ".xlsx";
+                    xmlDocdest.Save(pathToXml);
+                    ExcelManager.XmlToExcel(pathToXml, pathToExcel);
+                    Mail mail = new Mail();
+                    mail.send(employeeNumber, pathToExcel, 1);
+                    numberOfDividedFiles++;
+                }
+                
             }
-            int result = numberOfDividedFiles;
         }
 
         public static void AddOrderInformation(XmlDocument xmlDocdest, XmlNode orderNode, String orderNumber, String status, String clientId, String clientName, String clientSurname)
