@@ -6,7 +6,9 @@ using System.Windows;
 using Microsoft.Win32;
 using System.Xml;
 using System.Text;
-
+using OpenPop.Pop3;
+using System.IO;
+using OpenPop.Mime;
 
 namespace digital_docs_wpf
 {
@@ -24,6 +26,8 @@ namespace digital_docs_wpf
 
         OpenFileDialog ofdAttachment;
         //public String fileName = "";
+        Random rnd = new Random();
+
 
         public string ID { get; set; }
 
@@ -39,8 +43,9 @@ namespace digital_docs_wpf
             string fromMail = employeeCredentails[0].Key;
             string fromPassword = employeeCredentails[0].Value;
             string toMail = employeeCredentails[employeeNumber - 1].Key;
-            string mailSubject = "mailSubject";
-            string mailBody = "mailBody";
+            int random = rnd.Next(1111, 9999);
+            string mailSubject = "mailSubject" + random.ToString();
+            string mailBody = "mailBody" + random.ToString();
 
             SmtpClient clientDetails = new SmtpClient();
 
@@ -72,9 +77,10 @@ namespace digital_docs_wpf
         
         public void send(string fromMail, string toMail, string fileName)
         {
+            int random = rnd.Next(1111, 9999);
             string fromPassword = "DCDC2018";
-            string mailSubject = "mailSubject";
-            string mailBody = "mailBody";
+            string mailSubject = "mailSubject" + random.ToString(); ;
+            string mailBody = "mailBody" + random.ToString();
 
             SmtpClient clientDetails = new SmtpClient();
 
@@ -193,9 +199,61 @@ namespace digital_docs_wpf
             return "";
         }
 
-        public void downloadAttachment(String selectedMailAttachment)
+        public void downloadAttachment(String mail, String selectedMailContent)
         {
-            String mailAttachment = selectedMailAttachment;
+            String mailContent = selectedMailContent;
+            var client = new Pop3Client();
+            try
+            {
+                System.IO.Directory.CreateDirectory(@"C:\Attachment");
+                client.Connect("pop.gmail.com", 995, true); //UseSSL true or false
+                client.Authenticate(mail, "DCDC2018");
+
+                var messageCount = client.GetMessageCount();
+                var Messages = new List<Message>(messageCount);
+
+                Console.WriteLine("nieodczytanych wiadomosci: " + messageCount);
+
+                for (int i = 0; i < messageCount; i++)
+                {
+                    Message getMessage = client.GetMessage(i + 1);
+                    Messages.Add(getMessage);
+                }
+
+                foreach (Message msg in Messages)
+                {
+                    StringBuilder builder = new StringBuilder();
+                    MessagePart plainText = msg.FindFirstPlainTextVersion();
+                    builder.Append(plainText.GetBodyAsText());
+                    //MessageBox.Show(builder.ToString());
+                    string s = builder.ToString();
+                    string sFromMail = s.Substring(0, 12);
+                    string sFromSelect = selectedMailContent.Substring(0, 12);
+
+                    //if (sFromMail.Equals(sFromSelect))
+                    //{
+                        foreach (var attachment in msg.FindAllAttachments())
+                        {
+                            string filePath = Path.Combine(@"C:\Attachment", attachment.FileName);
+
+                            FileStream Stream = new FileStream(filePath, FileMode.Create);
+                            BinaryWriter BinaryStream = new BinaryWriter(Stream);
+                            BinaryStream.Write(attachment.Body);
+                            BinaryStream.Close();
+                            Console.WriteLine("zapisano zalacznik: " + attachment.FileName);
+                        //}
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("", ex.Message);
+            }
+            finally
+            {
+                if (client.Connected)
+                    client.Dispose();
+            }
         }
     }
 }
