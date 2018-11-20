@@ -68,11 +68,19 @@ namespace digital_docs_wpf
             foreach (var v in sync) {
                 if (v.Value.Key == v.Value.Value) { //sprawdzaj iloœæ maili
                     List<Mail> mails = new List<Mail>(); //kontener na maile które chcemy zebraæ
-                    foreach (var m in listItems) 
+                    foreach (var m in listItems)
                         if (m.ID == v.Key)
+                        {
                             mails.Add(m);
-                    
-                    /*tutaj scalanie xmli, zgubi³em siê trochê w projekcie*/
+                            m.downloadAttachment(m.Attachment); //pobierz nag³owek 
+                        }                
+
+                    //scalanie xmli
+                    string[] att = new string[mails.Count];
+
+                    for (int i = 0; i < mails.Count; i++)
+                        att[i] = mails[i].Attachment;
+                    XmlTransformer.MergeXmls(att);
                 }
             }
         }
