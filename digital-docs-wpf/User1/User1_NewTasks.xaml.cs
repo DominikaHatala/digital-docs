@@ -36,6 +36,8 @@ namespace digital_docs_wpf
                     mail.send(i+2, fileName, checkedEmployees.Length, newProcess);
                 }
             }
+            Archiver.AddActivity(newProcess, Archiver.ProcessActivity.zatwierdzenie_oferty.ToString());
+            Archiver.AddActivity(newProcess, Archiver.ProcessActivity.archiwizacja.ToString());
         }
 
         private void Attachment_OnClick(object sender, RoutedEventArgs e)

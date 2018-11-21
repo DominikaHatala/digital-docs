@@ -20,6 +20,7 @@ namespace digital_docs_wpf
             zatwierdzenie_oferty,
             mail_klient,
             wystawienie_strona,
+            archiwizacja
         }
 
         const string m_ConnectionString = "Data Source=.\\Archive.db;Version=3;New=True;";
